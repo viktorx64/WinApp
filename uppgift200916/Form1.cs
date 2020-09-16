@@ -21,7 +21,12 @@ namespace uppgift200916
         private void button1_Click(object sender, EventArgs e)
         {
             String Maker = textBox1.Text;
-            listBox1.Items.Add(Maker);
+            String model = textBox2.Text;
+            Cars.Add(new Car() { Make = Maker, Model = model});
+            //TO DO
+            //empty input field
+            textBox1.Text = "";
+            textBox2.Text = "";
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -47,6 +52,15 @@ namespace uppgift200916
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            foreach(Car car in Cars)
+            {
+                listBox1.Items.Add(car.Info());
+            }
         }
     }
 }
