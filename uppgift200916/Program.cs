@@ -24,9 +24,15 @@ namespace uppgift200916
     {
         public String Make { get; set; }
         public String Model { get; set; }
+        public String Color { get; set; }
+        public String Price { get; set; }   //sträng krashar inte och omvandlar även den till en string när vi skriver ut
         public String Info()
         {
             return ($"{Make} {Model}");
+        }
+        public String AllInfo()
+        {
+            return ($"A {Color} {Make} {Model} Costing: {Price} SEK");
         }
     }
 }
